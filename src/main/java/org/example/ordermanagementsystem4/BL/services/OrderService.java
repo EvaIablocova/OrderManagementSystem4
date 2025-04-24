@@ -61,5 +61,13 @@ public class OrderService {
     }
 
 
+    public OrderDTO processById(Long id) {
+        Order order = orderRepository.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
+        OrderDTO entity = new OrderDTO(order);
+        entity.setStatus("Processed");
+        return update (id, entity);
+    }
+
+
 
 }

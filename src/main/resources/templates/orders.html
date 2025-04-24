@@ -147,6 +147,7 @@
                                     <th>Payment method</th>
                                     <th>Delivery method</th>
                                     <th>Status</th>
+                                    <th>Process payment</th>
                                     <th>Delete</th>
                                     <th>Update</th>
                                     <th>Clone</th>
@@ -162,6 +163,24 @@
                                     <td th:text="${order.paymentMethod}" class="editable" data-field="paymentMethod"></td>
                                     <td th:text="${order.deliveryMethod}" class="editable" data-field="deliveryMethod"></td>
                                     <td th:text="${order.status}" class="editable" data-field="status"></td>
+
+<!--                                    <td>-->
+
+<!--                                        <form th:action="@{/orders/process/{id}(id=${order.id})}" method="post" style="display:inline;">-->
+<!--                                            <button type="submit" class="btn btn-danger btn-circle">-->
+<!--                                                <i class="fas fa-trash"></i>-->
+<!--                                            </button>-->
+<!--                                        </form>-->
+<!--                                    </td>-->
+
+                                    <td>
+                                        <form th:action="@{/orders/process/{id}(id=${order.id})}" method="post" style="display:inline;">
+                                            <button type="submit" class="btn btn-primary btn-circle">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+
                                     <td>
 
                                         <form th:action="@{/orders/delete/{id}(id=${order.id})}" method="post" style="display:inline;">

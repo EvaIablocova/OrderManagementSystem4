@@ -53,7 +53,7 @@ _____________________________________________________________
 
 Structural patterns
 
-1. Adapter
+1. Adapter - PaymentProcessor
 
     Purpose: Allows incompatible interfaces to work together.
 

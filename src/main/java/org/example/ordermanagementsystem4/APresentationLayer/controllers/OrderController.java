@@ -49,6 +49,12 @@ public class OrderController {
         return "redirect:/orders";
     }
 
+    @PostMapping ("/process/{id}")
+    public String processById(@PathVariable(name="id") Long Id) {
+        orderService.processById(Id);
+        return "redirect:/orders";
+    }
+
 
 
 
