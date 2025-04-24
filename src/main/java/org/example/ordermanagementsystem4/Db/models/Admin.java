@@ -1,4 +1,4 @@
-package org.example.ordermanagementsystem2.Db.models;
+package org.example.ordermanagementsystem4.Db.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,10 +1,10 @@
-package org.example.ordermanagementsystem2.BL.userPaymentFactories;
+package org.example.ordermanagementsystem4.BL.userPaymentFactories;
 
-import org.example.ordermanagementsystem2.BL.interfaces.PaymentMethodInterface;
-import org.example.ordermanagementsystem2.BL.interfaces.UserInterface;
-import org.example.ordermanagementsystem2.BL.interfaces.UserPaymentFactory;
-import org.example.ordermanagementsystem2.Db.paymentMethods.BankTransferPayment;
-import org.example.ordermanagementsystem2.BL.users.AdminUser;
+import org.example.ordermanagementsystem4.BL.interfaces.PaymentMethodInterface;
+import org.example.ordermanagementsystem4.BL.interfaces.UserInterface;
+import org.example.ordermanagementsystem4.BL.interfaces.UserPaymentFactory;
+import org.example.ordermanagementsystem4.BL.users.AdminUser;
+import org.example.ordermanagementsystem4.Db.paymentMethods.BankTransferPayment;
 
 public class AdminUserFactory implements UserPaymentFactory {
     @Override

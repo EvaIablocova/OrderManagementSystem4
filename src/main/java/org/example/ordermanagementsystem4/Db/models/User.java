@@ -1,9 +1,9 @@
-package org.example.ordermanagementsystem2.Db.models;
+package org.example.ordermanagementsystem4.Db.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.ordermanagementsystem2.APresentationLayer.DTOs.UserDTO;
+import org.example.ordermanagementsystem4.APresentationLayer.DTOs.UserDTO;
 
 @Getter
 @Setter

@@ -1,6 +1,6 @@
-package org.example.ordermanagementsystem2.Db.paymentMethods;
+package org.example.ordermanagementsystem4.Db.paymentMethods;
 
-import org.example.ordermanagementsystem2.BL.interfaces.PaymentMethodInterface;
+import org.example.ordermanagementsystem4.BL.interfaces.PaymentMethodInterface;
 
 public class PayPalPayment implements PaymentMethodInterface {
 

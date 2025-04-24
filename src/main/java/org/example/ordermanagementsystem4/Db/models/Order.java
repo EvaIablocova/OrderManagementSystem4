@@ -1,8 +1,8 @@
-package org.example.ordermanagementsystem2.Db.models;
+package org.example.ordermanagementsystem4.Db.models;
 
 import jakarta.persistence.*;
-import lombok.*;
-import org.example.ordermanagementsystem2.APresentationLayer.DTOs.OrderDTO;
+import lombok.Data;
+import org.example.ordermanagementsystem4.APresentationLayer.DTOs.OrderDTO;
 
 import java.util.List;
 
@@ -23,17 +23,19 @@ public class Order {
     private double totalAmount;
     private String paymentMethod;
     private String deliveryMethod;
+    private String status;
 
     public Order() {}
 
     public Order(String customerName, String shippingAddress, List<String> items,
-                 double totalAmount, String paymentMethod, String deliveryMethod) {
+                 double totalAmount, String paymentMethod, String deliveryMethod, String status) {
         this.username = customerName;
         this.shippingAddress = shippingAddress;
         this.items = items;
         this.totalAmount = totalAmount;
         this.paymentMethod = paymentMethod;
         this.deliveryMethod = deliveryMethod;
+        this.status = status;
     }
 
     public Order(OrderDTO orderDTO) {
@@ -43,10 +45,11 @@ public class Order {
         this.totalAmount = orderDTO.getTotalAmount();
         this.paymentMethod = orderDTO.getPaymentMethod();
         this.deliveryMethod = orderDTO.getDeliveryMethod();
+        this.status = orderDTO.getStatus();
     }
 
     public Order clone() {
-        return new Order(username, shippingAddress, List.copyOf(items), totalAmount, paymentMethod, deliveryMethod);
+        return new Order(username, shippingAddress, List.copyOf(items), totalAmount, paymentMethod, deliveryMethod, status);
     }
 
 }

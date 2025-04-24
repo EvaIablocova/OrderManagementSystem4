@@ -1,12 +1,9 @@
-package org.example.ordermanagementsystem2.BL.using;
+package org.example.ordermanagementsystem4.BL.using;
 
-import org.example.ordermanagementsystem2.BL.interfaces.PaymentMethodInterface;
-import org.example.ordermanagementsystem2.BL.interfaces.UserInterface;
-//import org.example.ordermanagementsystem2.APresentationLayer.DTOs.OrderDTO;
-//import org.example.ordermanagementsystem2.APresentationLayer.DTOs.OrderDTOBuilder;
-//import org.example.ordermanagementsystem2.BL.services.UserPaymentFactoryProvider;
-import org.example.ordermanagementsystem2.BL.interfaces.UserPaymentFactory;
-import org.example.ordermanagementsystem2.BL.services.UserPaymentFactoryProvider;
+import org.example.ordermanagementsystem4.BL.interfaces.PaymentMethodInterface;
+import org.example.ordermanagementsystem4.BL.interfaces.UserInterface;
+import org.example.ordermanagementsystem4.BL.interfaces.UserPaymentFactory;
+import org.example.ordermanagementsystem4.BL.services.UserPaymentFactoryProvider;
 
 public class Using {
 

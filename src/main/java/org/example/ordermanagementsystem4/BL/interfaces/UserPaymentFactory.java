@@ -1,4 +1,4 @@
-package org.example.ordermanagementsystem2.BL.interfaces;
+package org.example.ordermanagementsystem4.BL.interfaces;
 
 //import org.example.ordermanagementsystem2.Db.models.User;
 

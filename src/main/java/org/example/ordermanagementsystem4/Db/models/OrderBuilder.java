@@ -1,6 +1,4 @@
-package org.example.ordermanagementsystem2.Db.models;
-
-import org.example.ordermanagementsystem2.APresentationLayer.DTOs.OrderDTO;
+package org.example.ordermanagementsystem4.Db.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +10,7 @@ public class OrderBuilder {
     private double totalAmount;
     private String paymentMethod;
     private String deliveryMethod;
+    private String status;
 
     // Устанавливаем имя клиента
     public OrderBuilder setCustomerName(String customerName) {
@@ -43,6 +42,11 @@ public class OrderBuilder {
         return this;
     }
 
+    public OrderBuilder setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
     // Устанавливаем метод доставки
     public OrderBuilder setDeliveryMethod(String deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
@@ -56,6 +60,6 @@ public class OrderBuilder {
 
     // Строим объект заказа
     public Order build() {
-        return new Order(customerName, shippingAddress, items, totalAmount, paymentMethod, deliveryMethod);
+        return new Order(customerName, shippingAddress, items, totalAmount, paymentMethod, deliveryMethod, status);
     }
 }

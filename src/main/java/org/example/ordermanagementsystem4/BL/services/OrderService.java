@@ -1,11 +1,9 @@
-package org.example.ordermanagementsystem2.BL.services;
+package org.example.ordermanagementsystem4.BL.services;
 
-import org.example.ordermanagementsystem2.APresentationLayer.DTOs.UserDTO;
-import org.example.ordermanagementsystem2.Db.models.Order;
-import org.example.ordermanagementsystem2.APresentationLayer.DTOs.OrderDTO;
-import org.example.ordermanagementsystem2.Db.models.OrderBuilder;
-import org.example.ordermanagementsystem2.Db.models.User;
-import org.example.ordermanagementsystem2.Db.repositories.OrderRepository;
+import org.example.ordermanagementsystem4.APresentationLayer.DTOs.OrderDTO;
+import org.example.ordermanagementsystem4.Db.models.Order;
+import org.example.ordermanagementsystem4.Db.models.OrderBuilder;
+import org.example.ordermanagementsystem4.Db.repositories.OrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -38,6 +36,7 @@ public class OrderService {
                 .setTotalAmount(orderDTO.getTotalAmount())
                 .setPaymentMethod(orderDTO.getPaymentMethod())
                 .setDeliveryMethod(orderDTO.getDeliveryMethod())
+                .setStatus(orderDTO.getStatus())
                 .build();
 
 

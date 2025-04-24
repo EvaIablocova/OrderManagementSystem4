@@ -1,6 +1,6 @@
-package org.example.ordermanagementsystem2.BL.users;
+package org.example.ordermanagementsystem4.BL.users;
 
-import org.example.ordermanagementsystem2.BL.interfaces.UserInterface;
+import org.example.ordermanagementsystem4.BL.interfaces.UserInterface;
 
 public class AdminUser implements UserInterface {
     @Override

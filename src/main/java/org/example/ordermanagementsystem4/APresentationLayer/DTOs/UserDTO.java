@@ -1,8 +1,8 @@
-package org.example.ordermanagementsystem2.APresentationLayer.DTOs;
+package org.example.ordermanagementsystem4.APresentationLayer.DTOs;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.example.ordermanagementsystem2.Db.models.User;
+import org.example.ordermanagementsystem4.Db.models.User;
 
 @Getter
 @Setter

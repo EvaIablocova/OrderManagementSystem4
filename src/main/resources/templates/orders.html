@@ -22,6 +22,20 @@
 
 </head>
 
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <meta name="description" content="">-->
+<!--    <meta name="author" content="">-->
+
+<!--    <title>Orders</title>-->
+
+<!--    <link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">-->
+<!--    <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">-->
+<!--    <link th:href="@{/css/custom.css}" rel="stylesheet">-->
+<!--</head>-->
+
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -75,7 +89,7 @@
 
                                     <div class="form-group">
                                         <label for="totalAmount">Total amount</label>
-                                        <input type="text" class="form-control" id="totalAmount" name="totalAmount" required>
+                                        <input type="number" class="form-control" id="totalAmount" name="totalAmount" step="0.01" min="0" required>
                                     </div>
 
                                     <div class="form-group">
@@ -92,6 +106,14 @@
                                         <select id="deliveryMethod" name="deliveryMethod">
                                             <option>Standard</option>
                                             <option>Express</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="deliveryMethod">Status</label>
+                                        <select id="status" name="status">
+                                            <option>Unprocessed</option>
+                                            <option>Processed</option>
                                         </select>
                                     </div>
 
@@ -124,6 +146,7 @@
                                     <th>Total amount</th>
                                     <th>Payment method</th>
                                     <th>Delivery method</th>
+                                    <th>Status</th>
                                     <th>Delete</th>
                                     <th>Update</th>
                                     <th>Clone</th>
@@ -138,6 +161,7 @@
                                     <td th:text="${order.totalAmount}" class="editable" data-field="totalAmount"></td>
                                     <td th:text="${order.paymentMethod}" class="editable" data-field="paymentMethod"></td>
                                     <td th:text="${order.deliveryMethod}" class="editable" data-field="deliveryMethod"></td>
+                                    <td th:text="${order.status}" class="editable" data-field="status"></td>
                                     <td>
 
                                         <form th:action="@{/orders/delete/{id}(id=${order.id})}" method="post" style="display:inline;">
@@ -214,6 +238,23 @@
 
 
 
+<!--&lt;!&ndash; Bootstrap core JavaScript &ndash;&gt;-->
+<!--<script th:src="@{/vendor/jquery/jquery.min.js}"></script>-->
+<!--<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>-->
+
+<!--&lt;!&ndash; Core plugin JavaScript &ndash;&gt;-->
+<!--<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>-->
+
+<!--&lt;!&ndash; Custom scripts for all pages &ndash;&gt;-->
+<!--<script th:src="@{/js/sb-admin-2.min.js}"></script>-->
+
+<!--&lt;!&ndash; Page level plugins &ndash;&gt;-->
+<!--<script th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>-->
+<!--<script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>-->
+
+<!--&lt;!&ndash; Page level custom scripts &ndash;&gt;-->
+<!--<script th:src="@{/js/demo/datatables-demo.js}"></script>-->
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const addOrderButton = document.getElementById("addOrderButton");
@@ -228,7 +269,8 @@
                 items: formData.get("items").split(","), // Преобразуем в массив
                 totalAmount: formData.get("totalAmount"),
                 paymentMethod: formData.get("paymentMethod"),
-                deliveryMethod: formData.get("deliveryMethod")
+                deliveryMethod: formData.get("deliveryMethod"),
+                status: formData.get("status")
             };
 
             fetch("/orders/create", {
@@ -294,6 +336,7 @@
                     totalAmount: row.querySelector(".editable[data-field='totalAmount'] input").value.trim(),
                     paymentMethod: row.querySelector(".editable[data-field='paymentMethod'] input").value.trim(),
                     deliveryMethod: row.querySelector(".editable[data-field='deliveryMethod'] input").value.trim(),
+                    status: row.querySelector(".editable[data-field='status'] input").value.trim(),
                 };
 
                 // Вернуть данные строки в режим отображения
